@@ -1,22 +1,9 @@
 import { motion, useAnimationControls, useInView } from 'framer-motion'
 import React from 'react';
+import img from "../imgs/image0-removebg-preview.png"
 
-const draw = {
-    hidden: { pathLength: 0, opacity: 0, fill: "#ffffff" },
-    visible: (i) => {
-        const delay = 1 + i * 0.5;
-        return {
-            fill: "#000000",
-            pathLength: 1,
-            opacity: 1,
-            transition: {
-                pathLength: { delay: 5.5, type: "spring", duration: 2.5, bounce: 0 },
-                opacity: { delay, duration: 0.01 },
-                fill: { delay: 5.5, duration: 1.5 },
-            }
-        };
-    }
-};
+
+
 
 const buttonVariants = {
     initial: {
@@ -63,15 +50,19 @@ const buttonVariants2 = {
     }
 }
 
+let hasDrawnBlob = false;
+
 function PageOne() {
 
     const controls = useAnimationControls()
     const controls2 = useAnimationControls()
+    const blobControls = useAnimationControls()
 
     const [canAnimate, setCanAnimate] = React.useState(true);
+    
 
     return (
-        <div className="w-full flex items-center justify-center grid grid-cols-3 grid-rows-3" style={{ height: "calc(85vh)" }}>
+        <div className="w-full flex items-center justify-center grid grid-cols-3 grid-rows-3" style={{ height: "calc(100vh)" }}>
             <div className="absolute top-[25%] left-[18%] flex flex-col">
                 <motion.div className="flex flex-col" animate={{ translateY: 0, opacity: 1, transition: {
                     duration: 1
@@ -111,7 +102,7 @@ function PageOne() {
                         translateY: 30, opacity: 0
                     }}>
                         <motion.button onLoadStart={()=> controls.start(buttonVariants.initial)} onLoad={()=> controls.start(buttonVariants.animate)} animate={controls} className="text-blue-400 font-[quicksand] font-bold text-xl px-12 py-3">Projects</motion.button>
-                        <motion.button animate={controls2}  className="absolute font-[quicksand] left-0 text-blue-400 font-[quicksand font-bold text-xl px-12 py-3 bg-blue-400 text-[#262626]" style={{ rotateX: 90 }}>Projects</motion.button>
+                        <motion.button animate={controls2}  className="absolute font-[quicksand] left-0 text-[#262626] font-[quicksand font-bold text-xl px-12 py-3 bg-blue-400" style={{ rotateX: 90 }}>Projects</motion.button>
                     </motion.div>
 
                     <motion.div animate={{translateY: 0, opacity: 1, transition: {
@@ -122,10 +113,13 @@ function PageOne() {
                     }}>
                         <button className="text-blue-400 font-[quicksand] text-xl hover:bg-blue-400/10 transition-all duration-500 font-bold px-12 py-3 text-blue-400">View Resume</button>
                     </motion.div>
-                    
+
                 </div>
+
             </div>
-            
+            <motion.div initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 1, delay: 1.8}}} className="absolute right-[15%] bottom-[30%] h-[200px] flex w-[500px] drop-shadow-lg overflow-visible bg-blue-400/50 rounded-lg">
+                <motion.img initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: 1, delay: 2}}} className="absolute bottom-0 left-[80px]" src={img}></motion.img>
+            </motion.div>
         </div>
     )
 }

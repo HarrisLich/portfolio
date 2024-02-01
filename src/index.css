@@ -29,4 +29,5 @@ code {
 .blob{
   stroke: aqua;
   stroke-width: 2;
+  fill: none;
 }
