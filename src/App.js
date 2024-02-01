@@ -3,6 +3,7 @@ import './App.css';
 import PageOne from './components/PageOne';
 import Navbar from './components/Navbar';
 import PageTwo from './components/PageTwo';
+import PageThree from './components/PageThree';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Navbar></Navbar>
       <PageOne/>
       <PageTwo/>
+      <PageThree/>
     </div>
   );
 }
