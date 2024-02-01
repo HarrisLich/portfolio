@@ -106,7 +106,9 @@ function PageOne() {
                         translateY: 30, opacity: 0
                     }}>
                         <motion.button onLoadStart={() => controls.start(buttonVariants.initial)} onLoad={() => controls.start(buttonVariants.animate)} animate={controls} className="text-blue-400 font-[quicksand] font-bold text-sm desktop:text-xl laptop:px-6 laptop:py-2 px-4 py-1 desktop:px-12 desktop:py-3">Projects</motion.button>
-                        <motion.button animate={controls2} className="absolute font-[quicksand] left-0 text-[#262626] font-[quicksand font-bold text-sm desktop:text-xl laptop:px-6 laptop:py-2 px-4 py-1 desktop:px-12 desktop:py-3 bg-blue-400" style={{ rotateX: 90 }}>Projects</motion.button>
+                        <motion.button onClick={() => {
+                            document.getElementById("projects").scrollIntoView({ behavior: 'smooth' })
+                        }} animate={controls2} className="absolute font-[quicksand] left-0 text-[#262626] font-[quicksand font-bold text-sm desktop:text-xl laptop:px-6 laptop:py-2 px-4 py-1 desktop:px-12 desktop:py-3 bg-blue-400" style={{ rotateX: 90 }}>Projects</motion.button>
                     </motion.div>
                     <motion.div animate={{
                         translateY: 0, opacity: 1, transition: {
@@ -116,7 +118,10 @@ function PageOne() {
                         opacity: 0,
                         translateY: 30
                     }}>
-                        <button className="text-blue-400 font-[quicksand] text-sm truncate desktop:text-xl hover:bg-blue-400/10 transition-all duration-500 font-bold laptop:px-6 laptop:py-2 px-4 py-1 desktop:px-12 desktop:py-3 text-blue-400">View Resume</button>
+                        <a href="https://drive.google.com/file/d/1bkvyUswt-tf-WJSObq-H1j20qwNH5bBg/view?usp=drive_link">
+                            <button className="text-blue-400 font-[quicksand] text-sm truncate desktop:text-xl hover:bg-blue-400/10 transition-all duration-500 font-bold laptop:px-6 laptop:py-2 px-4 py-1 desktop:px-12 desktop:py-3 text-blue-400">View Resume</button>
+                        </a>
+
                     </motion.div>
                 </div>
             </div>
