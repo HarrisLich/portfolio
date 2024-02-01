@@ -21,7 +21,7 @@ function PageThree(){
             <motion.div ref={ref} style={{ transform: isInView ? "none" : "translateY(30px)", opacity: isInView ? 1 : 0, transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 1s" }} className="w-full items-center justify-center mt-8 flex text-white laptop:text-2xl text-zinc-400 font-[quicksand]">
                 Technologies I Prefer
             </motion.div>
-            <div className="w-full flex flex-row items-center justify-center mt-[4%] laptop:gap-48 gap-12">
+            <div className="w-full flex flex-row items-center justify-center mt-[2%] laptop:gap-48 gap-12">
                 <motion.div ref={refReactIcon} style={{opacity: reactIconIsInView ? 1 : 0, transition: "all 1s 1.5s"}} className="flex flex-col items-center justify-center text-zinc-400 font-[quicksand]">
                     <img className="laptop:w-[75px] w-[50px]" src="https://img.icons8.com/plasticine/100/react.png" alt="react"/>
                     <h1 className="mt-2">React js</h1>
@@ -54,7 +54,7 @@ function PageThree(){
                 </motion.div>
             </div>
             <motion.div style={{ transform: reactIconIsInView ? "none" : "translateY(30px)", opacity: reactIconIsInView ? 1 : 0, transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 5s" }} className="w-full items-center justify-center mt-[4%] flex text-white laptop:text-xl text-zinc-400 font-[quicksand]">Other Technologies</motion.div>
-            <div className="w-full flex flex-row items-center justify-center mt-[4%] laptop:gap-48 gap-12">
+            <div className="w-full flex flex-row items-center justify-center mt-[2%] laptop:gap-48 gap-12 py-12">
                 <motion.div style={{opacity: reactIconIsInView ? 1 : 0, transition: "all 1s 5.5s" }} className="flex flex-col items-center justify-center text-zinc-400 font-[quicksand]">
                     <img className="laptop:w-[75px] w-[50px]" src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg"></img>
                     <h1 className="mt-2">Nodejs</h1>
@@ -68,6 +68,7 @@ function PageThree(){
                     <h1 className="mt-2">Express</h1>
                 </motion.div>
             </div>
+            <div className="w-full border-t border-zinc-700"></div>
         </div>
     )
 }

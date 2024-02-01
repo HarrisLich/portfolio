@@ -21,7 +21,7 @@ function PageTwo() {
 
 
     return (
-        <div className="relative w-full flex flex-col" style={{ height: "calc(60vh)" }}>
+        <div className="relative w-full flex flex-col overflow-auto" style={{ height: "calc(60vh)" }}>
             <motion.div style={{ transform: isInViewA ? "none" : "translateY(30px)", opacity: isInViewA ? 1 : 0, transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s" }} ref={refA} className="flex items-start w-full justify-center text-zinc-300 font-bold text-lg laptop:text-5xl">
                 You're Safe And in Good Hands
             </motion.div>
