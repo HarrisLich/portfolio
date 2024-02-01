@@ -69,9 +69,9 @@ function PageOne() {
                 }}} initial={{
                     translateY: 30, opacity: 0
                 }}>
-                    <h1 className="text-white text-7xl font-bold">The perfect place to</h1>
-                    <h1 className="text-white text-7xl font-bold mt-4">expand your</h1>
-                    <h1 className="text-white text-7xl font-bold mt-4">business</h1>
+                    <h1 className="text-zinc-300 text-7xl font-bold">The perfect place to</h1>
+                    <h1 className="text-zinc-300 text-7xl font-bold mt-4">expand your</h1>
+                    <h1 className="text-zinc-300 text-7xl font-bold mt-4">business</h1>
                 </motion.div>
 
 
