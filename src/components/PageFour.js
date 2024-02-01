@@ -30,7 +30,13 @@ function PageFour() {
                 <div className="flex flex-row w-full items-center justify-center">
                     <motion.img style={{ opacity: cardAIsInView ? 1 : 0, transform: cardAIsInView ? "translateX(-100px)" : "translateX(-350px)", transition: "all 1s 0.5s" }} className="w-[400px]" src={spigot}></motion.img>
                     <motion.div ref={cardA} className="drop-shadow-lg laptop:w-[400px] flex flex-col justify-start items-start laptop:h-[200px] bg-zinc-300 rounded-lg w-full" style={{ opacity: cardAIsInView ? 1 : 0, transform: cardAIsInView ? "translateX(-140px)" : "translateX(-350px)", transition: "all 1s 0.5s" }}>
-                        <div></div>
+                        <div className="w-full h-full flex flex-col items-start justify-start px-4 py-2">
+                            <h1 className="font-bold laptop:text-2xl font-[quicksand]">Backpacks</h1>
+                            <h1 className="mt-2">Backpacks is an easy to use, simple backpack plugin meant to closely simulate an actual backpack. The backpacks config is small and simple!</h1>
+                            <div className="w-full flex flex-row gap-4">
+                                
+                            </div>
+                        </div>
                     </motion.div>
                 </div>
 
