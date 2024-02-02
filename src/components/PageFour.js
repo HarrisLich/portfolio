@@ -92,8 +92,8 @@ function PageFour() {
                             <h1 className="mt-2">Harris-Tracker is a simple static frontend site, it actively tracks a persons age to a large precision.</h1>
                             <div className="w-full w-full h-full items-end flex flex-row gap-4 mt-4">
 
-                                <AnimatedLink href="https://github.com/HarrisLich/Balloons/releases/tag/1.2" title="Source Code" />
-                                <AnimatedLink href="https://www.spigotmc.org/resources/balloons.114430/" title="Project Page"></AnimatedLink>
+                                <AnimatedLink href="https://github.com/HarrisLich/age-tracker" title="Source Code" />
+                                <AnimatedLink href="https://harris-tracker.netlify.app/" title="Project Page"></AnimatedLink>
                             </div>
                         </div>
                     </motion.div>
