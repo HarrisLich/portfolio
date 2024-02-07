@@ -3,6 +3,8 @@ import React from 'react'
 import spigot from "../imgs/spigot1.png"
 import harrisTracker from "../imgs/harris-tracker.png"
 import AnimatedLink from "./AnimatedLink"
+import { unstable_renderSubtreeIntoContainer } from "react-dom"
+import harrisReads from '../imgs/harrisreads.jpeg'
 
 const buttonVariants = {
     rest: {
@@ -38,10 +40,13 @@ function PageFour() {
     const cardCIsInView = useInView(cardC, { once: true })
 
     const shadowButton = React.useRef(null)
-    const shadowButtonIsInView = useInView(shadowButton, {once: true})
+    const shadowButtonIsInView = useInView(shadowButton, { once: true })
+
+    const cardD = React.useRef(null)
+    const cardDIsInView = useInView(cardD, {once: true})
 
     const banner = React.useRef(null)
-    const bannerIsInView = useInView(banner, {once: true})
+    const bannerIsInView = useInView(banner, { once: true })
 
 
     return (
@@ -53,6 +58,24 @@ function PageFour() {
                 No better way to get experience then real projects
             </motion.div>
             <div className="flex flex-col w-full items-center justify-center mt-[7%] gap-12">
+
+
+                <div className="flex flex-row w-full items-center justify-center">
+                    <motion.div ref={cardD} className="drop-shadow-lg laptop:w-[400px] flex flex-col justify-start items-start laptop:h-[200px] bg-zinc-300 rounded-lg w-full z-20" style={{ opacity: cardDIsInView ? 1 : 0, transform: cardDIsInView ? "translateX(140px)" : "translateX(350px)", transition: "all 1s 0.5s" }}>
+                        <div className="w-full h-full flex flex-col items-start justify-start px-4 py-2 font-[quicksand]">
+                            <h1 className="font-bold laptop:text-2xl font-[quicksand]">Harris Reads</h1>
+                            <h1 className="mt-2">Harris Reads is a simple webpage utilizing Google Books API to conduct book searches, and rendering weekly updated NY Times Bestsellers.</h1>
+                            <div className="w-full w-full h-full items-end flex flex-row gap-4 mt-4">
+
+                                <AnimatedLink href="https://github.com/HarrisLich/Books4U" title="Source Code" />
+                                <AnimatedLink href="https://harris-reads.netlify.app/" title="Project Page"></AnimatedLink>
+                            </div>
+                        </div>
+                    </motion.div>
+                    <motion.img style={{ opacity: cardDIsInView ? 1 : 0, transform: cardDIsInView ? "translateX(100px)" : "translateX(350px)", transition: "all 1s 0.5s" }} className="w-[400px] z-10" src={harrisReads}></motion.img>
+
+                </div>
+
                 <div className="flex flex-row w-full items-center justify-center">
                     <motion.img style={{ opacity: cardAIsInView ? 1 : 0, transform: cardAIsInView ? "translateX(-100px)" : "translateX(-350px)", transition: "all 1s 0.5s" }} className="w-[400px]" src={spigot}></motion.img>
                     <motion.div ref={cardA} className="drop-shadow-lg laptop:w-[400px] flex flex-col justify-start items-start laptop:h-[200px] bg-zinc-300 rounded-lg w-full" style={{ opacity: cardAIsInView ? 1 : 0, transform: cardAIsInView ? "translateX(-140px)" : "translateX(-350px)", transition: "all 1s 0.5s" }}>
@@ -99,7 +122,7 @@ function PageFour() {
                     </motion.div>
                 </div>
 
-                <motion.div ref={shadowButton} style={{opacity: shadowButtonIsInView ? 1 : 0, transition: "all 1s 0.5s"}} className="mt-[5%] w-full flex flex-col items-center justify-center">
+                <motion.div ref={shadowButton} style={{ opacity: shadowButtonIsInView ? 1 : 0, transition: "all 1s 0.5s" }} className="mt-[5%] w-full flex flex-col items-center justify-center">
                     <motion.a href="https://github.com/HarrisLich" onHoverStart={() => {
                         buttonControl.start(buttonVariants.animate)
                     }} onHoverEnd={() => {
@@ -110,14 +133,14 @@ function PageFour() {
                     <motion.div className="absolute w-[180px] h-[45px] bg-blue-400/70 z-10" animate={buttonControl} initial={buttonVariants.rest}></motion.div>
                 </motion.div>
             </div>
-            <motion.div ref={banner} className="h-[200px] laptop:py-16 bg-blue-400/70 mt-[8%] flex items-center justify-center" style={{width: bannerIsInView ? "100%" : 0, transition: "all 1s 0.5s"}}>
-                <motion.div style={{opacity: bannerIsInView ? 1 : 0, transition: "all 1s 1s"}} className="laptop:text-5xl text-white font-bold flex flex-row">What are you waiting for, 
+            <motion.div ref={banner} className="h-[200px] laptop:py-16 bg-blue-400/70 mt-[8%] flex items-center justify-center" style={{ width: bannerIsInView ? "100%" : 0, transition: "all 1s 0.5s" }}>
+                <motion.div style={{ opacity: bannerIsInView ? 1 : 0, transition: "all 1s 1s" }} className="laptop:text-5xl text-white font-bold flex flex-row">What are you waiting for,
                     <a href="mailto:harris.lichstein1@marist.edu" className="ml-3 hover:text-[#262626] transition-all duration-300">send a message!</a>
                 </motion.div>
             </motion.div>
-            
+
             <div className="w-full h-full flex grid grid-cols-3">
-            <div className="w-full h-full flex flex-col laptop:px-12 mt-8">
+                <div className="w-full h-full flex flex-col laptop:px-12 mt-8">
                     <div className="laptop:text-xl font-[quicksand] font-bold text-zinc-300">About Me</div>
                     <h1 className="font-bold text-zinc-400 font-[quicksand] mt-4">I am Harris Lichstein. A learning Software Developer, currently studying at Marist College. Programming caught my interest at an early age, and as an individual I have pursued my interest. I have mainly produced applications using Java, JavaScript, HTML, JSX, CSS, TailwindCSS and Python.</h1>
                 </div>
@@ -129,8 +152,8 @@ function PageFour() {
                 <div className="w-full h-full flex flex-col laptop:px-12 mt-8">
                     <div className="laptop:text-xl font-[quicksand] font-bold text-zinc-300">Links</div>
                     <a href="/" className="mt-4 font-bold font-[quicksand] text-zinc-400">Home</a>
-                    <button onClick={()=> {
-                        ref.current.scrollIntoView({behavior: 'smooth'})
+                    <button onClick={() => {
+                        ref.current.scrollIntoView({ behavior: 'smooth' })
                     }} className="mt-2 w-fit font-bold font-[quicksand] text-zinc-400">Projects</button>
                 </div>
             </div>
