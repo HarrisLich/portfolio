@@ -5,6 +5,7 @@ import harrisTracker from "../imgs/harris-tracker.png"
 import AnimatedLink from "./AnimatedLink"
 import { unstable_renderSubtreeIntoContainer } from "react-dom"
 import harrisReads from '../imgs/harrisreads.jpeg'
+import pizza from '../imgs/pizza.jpeg'
 
 const buttonVariants = {
     rest: {
@@ -43,7 +44,10 @@ function PageFour() {
     const shadowButtonIsInView = useInView(shadowButton, { once: true })
 
     const cardD = React.useRef(null)
-    const cardDIsInView = useInView(cardD, {once: true})
+    const cardDIsInView = useInView(cardD, { once: true })
+
+    const cardE = React.useRef(null)
+    const cardEIsInView = useInView(cardE, { once: true })
 
     const banner = React.useRef(null)
     const bannerIsInView = useInView(banner, { once: true })
@@ -58,6 +62,21 @@ function PageFour() {
                 No better way to get experience then real projects
             </motion.div>
             <div className="flex flex-col w-full items-center justify-center mt-[7%] gap-12">
+
+                <div className="flex flex-row w-full items-center justify-center">
+                    <motion.img style={{ opacity: cardEIsInView ? 1 : 0, transform: cardEIsInView ? "translateX(-100px)" : "translateX(-350px)", transition: "all 1s 0.5s" }} className="w-[400px] h-[300px] object-cover" src={pizza}></motion.img>
+                    <motion.div ref={cardE} className="drop-shadow-lg laptop:w-[400px] flex flex-col justify-start items-start laptop:h-[200px] bg-zinc-300 rounded-lg w-full" style={{ opacity: cardEIsInView ? 1 : 0, transform: cardEIsInView ? "translateX(-140px)" : "translateX(-350px)", transition: "all 1s 0.5s" }}>
+                        <div className="w-full h-full flex flex-col items-start justify-start px-4 py-2 font-[quicksand]">
+                            <h1 className="font-bold laptop:text-2xl font-[quicksand]">Pizza</h1>
+                            <h1 className="mt-2">Pizza is a simple front-end webpage which could theoretically be filled in to be usable by any pizza restraunt!</h1>
+                            <div className="w-full h-full items-end flex flex-row gap-4 mt-4">
+
+                                <AnimatedLink href="https://github.com/HarrisLich/Backpacks/releases/tag/1.0" title="Source Code" />
+                                <AnimatedLink href="https://www.spigotmc.org/resources/backpacks.114526/" title="Project Page"></AnimatedLink>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
 
 
                 <div className="flex flex-row w-full items-center justify-center">
