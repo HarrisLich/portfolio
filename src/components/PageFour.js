@@ -71,8 +71,8 @@ function PageFour() {
                             <h1 className="mt-2">Pizza is a simple front-end webpage which could theoretically be filled in to be usable by any pizza restraunt!</h1>
                             <div className="w-full h-full items-end flex flex-row gap-4 mt-4">
 
-                                <AnimatedLink href="https://github.com/HarrisLich/Backpacks/releases/tag/1.0" title="Source Code" />
-                                <AnimatedLink href="https://www.spigotmc.org/resources/backpacks.114526/" title="Project Page"></AnimatedLink>
+                                <AnimatedLink href="https://github.com/HarrisLich/pizza" title="Source Code" />
+                                <AnimatedLink href="https://pizza-harris.netlify.app/" title="Project Page"></AnimatedLink>
                             </div>
                         </div>
                     </motion.div>
