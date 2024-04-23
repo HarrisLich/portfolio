@@ -118,7 +118,7 @@ function PageOne() {
                         opacity: 0,
                         translateY: 30
                     }}>
-                        <a href="https://drive.google.com/file/d/1VMeHH9wV1VTa2pJO_bCBNDIyVigWH4R5/view?usp=drive_link">
+                        <a href="https://drive.google.com/file/d/1l2stXH6zjq5QFsWJ4yF2W1SrMYmDwnVw/view?usp=sharing">
                             <button className="text-blue-400 font-[quicksand] text-sm truncate desktop:text-xl hover:bg-blue-400/10 transition-all duration-500 font-bold laptop:px-6 laptop:py-2 px-4 py-1 desktop:px-12 desktop:py-3 text-blue-400">View Resume</button>
                         </a>
 
